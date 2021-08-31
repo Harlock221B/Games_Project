@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from django.contrib.messages import constants as minhas_msg
 from pathlib import Path
 import os
 
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home.apps.HomeConfig'
+    'home.apps.HomeConfig',
+    'usuario.apps.UsuarioConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,11 +122,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-staticfiles_dirs = [
-	os.path.join(BASE_DIR,'layouts/static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'layouts/static')
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGE_TAGS = {
+    minhas_msg.INFO: 'alert-info',
+    minhas_msg.ERROR: 'alert-danger',
+    minhas_msg.WARNING: 'alert-warning',
+    minhas_msg.SUCCESS: 'alert-success',
+}

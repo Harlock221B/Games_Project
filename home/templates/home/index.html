@@ -3,73 +3,41 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
-  <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Home</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Games</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-      <a class="btn btn-success" href="">Saiba Mais</a>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-
-      {% for linhas in dados %}
-        <div class="col">
-          <div class="card h-100">
-            <img src="{{linhas.foto.url}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{linhas.title}}</h5>
-              <p class="card-text">descrição</p>
-            </div>
-            <a href="#" class="btn btn-primary">Veja mais...</a>
-          </div>
+    {% include 'menu.html' %} {% include 'carousel.html' %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Games</h1>
+            <p class="lead">Selecione um Game Abaixo</p>
+            <a class="btn btn-success" href="">Saiba Mais</a>
         </div>
-      {% endfor %}
-
     </div>
 
-  </div>
-
-
-
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for linhas in dados %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{linhas.foto.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{linhas.title}}</h5>
+                        <p class="card-text">descrição</p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Veja mais...</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 
 </html>
