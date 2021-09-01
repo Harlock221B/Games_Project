@@ -11,7 +11,7 @@ class Produtora(models.Model):
 
 class Games(models.Model):
         title = models.CharField(max_length=30)
-        description = models.CharField(max_length=50)
+        description = models.CharField(max_length=500)
         lancamento = models.DateTimeField(default=timezone.now())
         mostrar = models.BooleanField(default=True)
         produtora = models.ForeignKey(Produtora, on_delete=models.DO_NOTHING)

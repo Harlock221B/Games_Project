@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Playground</title>
 </head>
 
 <body>
@@ -26,10 +26,11 @@
             {% for linhas in dados %}
             <div class="col">
                 <div class="card h-100">
-                    <img src="{{linhas.foto.url}}" class="card-img-top" alt="...">
+                    <img src="{{linhas.foto.url}}" class="card-img-top w-100 h-75" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{linhas.title}}</h5>
                         <p class="card-text">{{linhas.description}}</p>
+                        <p class="card-text">R${{linhas.price}}</p>
                     </div>
                     <a href="#" class="btn btn-primary">Veja mais...</a>
                 </div>
