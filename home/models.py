@@ -3,14 +3,14 @@ from django.utils import timezone
 
 
 class Produtora(models.Model):
-        name = models.CharField(max_length=50)
+        name = models.CharField(max_length=60)
         description = models.CharField(max_length=200)
 
         def __str__(self):
                 return self.name
 
 class Games(models.Model):
-        title = models.CharField(max_length=30)
+        title = models.CharField(max_length=60)
         description = models.CharField(max_length=500)
         lancamento = models.DateTimeField(default=timezone.now())
         mostrar = models.BooleanField(default=True)
