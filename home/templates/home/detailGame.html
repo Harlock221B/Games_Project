@@ -16,20 +16,27 @@
     </header>
     <main>
         <div class="container" style="margin: 5%;">
-            <div class="container">
-                {% if dados.foto%}
-                <img src="{{dados.foto.url}}" class="img-thumbnail" alt="gameheader" style="width:30%;">
-                {% endif%}
-            </div>
-            <div class="container">
-                <h1 class="card-title">{{dados.title}}</h1>
-                <p class="#">
-                <h4>Descrição do Jogo:</h4>
-                {{dados.description}}
-                <br> {{dados.lancamento|date:'d/m/Y'}}
-                <br> R$ {{dados.price}}
-                <br> <button class="btn btn-primary">Comprar</button>
-                </p>
+            <div class="row">
+                <div class="col">
+                    {% if dados.foto%}
+                    <img src="{{dados.foto.url}}" class="img-thumbnail" alt="gameheader" style="width:65%;">
+                    {% endif%}
+                </div>
+                <div class="col">
+                    <h1 class="card-title">{{dados.title}}</h1>
+                    <p class="#">
+                        <h4>Descrição do Jogo</h4>
+                        {{dados.description}}
+                        <br><br>
+                        <h5>Data de Lançamento</h5>
+                        {{dados.lancamento|date:'d/m/Y'}}
+                        <br><br>
+                        <h5>Preço</h5>
+                        R$ {{dados.price}}
+                        <br>
+                        <button class="btn btn-primary">Comprar</button>
+                    </p>
+                </div>
             </div>
         </div>
     </main>
