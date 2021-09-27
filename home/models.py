@@ -5,7 +5,7 @@ from django.utils import timezone
 class Produtora(models.Model):
         name = models.CharField(max_length=60)
         description = models.CharField(max_length=200)
-
+        logo = models.ImageField(blank=True, upload_to='fotos/%y/%m/%d/')
         def __str__(self):
                 return self.name
 
