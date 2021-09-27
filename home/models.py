@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-
 class Produtora(models.Model):
         name = models.CharField(max_length=60)
         description = models.CharField(max_length=200)
